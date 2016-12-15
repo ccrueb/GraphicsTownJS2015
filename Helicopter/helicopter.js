@@ -104,9 +104,9 @@ an example of a more complex/richer behavior.
             view:drawingState.view, proj:drawingState.proj, lightdir:drawingState.sunDirection,
             cubecolor:this.color, model: modelM });
         twgl.setBuffersAndAttributes(gl,shaderProgram,copterBodyBuffers);
-        twgl.drawBufferInfo(gl, gl.TRIANGLES, copterBodyBuffers);
+        twgl.drawBufferInfo(gl,copterBodyBuffers,  gl.TRIANGLES);
         twgl.setBuffersAndAttributes(gl,shaderProgram,copterRotorBuffers);
-        twgl.drawBufferInfo(gl, gl.TRIANGLES, copterRotorBuffers);
+        twgl.drawBufferInfo(gl, copterRotorBuffers, gl.TRIANGLES );
     };
     Copter.prototype.center = function(drawingState) {
         return this.position;
