@@ -224,6 +224,5 @@ var grobjects = grobjects || [];
         test.position[1] = 3;
         test.scale = [2, 2];
 
-    grobjects.push(test);
 
 })();

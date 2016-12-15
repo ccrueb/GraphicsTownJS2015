@@ -25,7 +25,6 @@ var Skybox;
       this.name = name;
     }
     Skybox.prototype.init = function(drawingState) {
-      console.log("here");
         var gl=drawingState.gl;
         program = twgl.createProgramInfo(gl, ["skybox-vs", "skybox-fs"]);
         plane = twgl.primitives.createCubeBufferInfo(gl,100);
@@ -51,13 +50,6 @@ var Skybox;
     };
     Skybox.prototype.draw = function(drawingState) {
       var gl = drawingState.gl;
-      var orbitSpeed = 1;
-      var radius = 20;
-      var projection = m4.perspective(90 * Math.PI / 180, gl.canvas.clientWidth / gl.canvas.clientHeight, 0.5, 100);
-      var eye = [Math.cos(orbitSpeed) * radius, 4, Math.sin(orbitSpeed) * radius];
-      var target = [0, 0, 0];
-      var up = [0, 1, 0];
-
       
       m4.setTranslation(drawingState.view, [0, 0, 0], viewDirection);
       m4.multiply(drawingState.proj, viewDirection, viewDirectionProjection);
@@ -78,4 +70,4 @@ var Skybox;
     }
 })();
 
-grobjects.push(new Skybox("Skybox"));
+//grobjects.push(new Skybox("Skybox"));
