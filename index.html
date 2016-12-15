@@ -19,6 +19,7 @@
 <script src="ExampleObjects/simplest.js"></script>
 <script src="ExampleObjects/texturedplane.js"></script>
 <script src="ExampleObjects/cube.js"></script>
+<script src="Skybox/skybox.js"></script>
 
 <!-- I am adding the helicopter -->
 <script src="Helicopter/helicopter.js"></script>
@@ -102,6 +103,29 @@
                            );
 
     }
+</script>
+
+<script id="skybox-vs" type="not-js">
+    attribute vec4 position;
+    uniform mat4 P, V;
+varying vec4 v_position;
+void main() {
+    
+  v_position = position;
+
+  gl_Position = P * V * v_position;
+}
+</script>
+<script id="skybox-fs" type="notjs">
+   precision mediump float;
+
+uniform samplerCube u_skybox;
+varying vec4 v_position;
+void main() {
+ 
+  gl_FragColor = textureCube(u_skybox, v_position.xyz);
+      
+}
 </script>
 
 </html>
