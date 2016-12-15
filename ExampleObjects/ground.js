@@ -73,7 +73,7 @@ var groundPlaneSize = groundPlaneSize || 5;
             twgl.setUniforms(shaderProgram,{
                 view:drawingState.view, proj:drawingState.proj
             });
-            twgl.drawBufferInfo(gl, gl.TRIANGLES, buffers);
+            twgl.drawBufferInfo(gl, buffers,gl.TRIANGLES);
         },
         center : function(drawingState) {
             return [0,0,0];

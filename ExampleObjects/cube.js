@@ -80,7 +80,7 @@ var SpinningCube = undefined;
         twgl.setUniforms(shaderProgram,{
             view:drawingState.view, proj:drawingState.proj, lightdir:drawingState.sunDirection,
             cubecolor:this.color, model: modelM });
-        twgl.drawBufferInfo(gl, gl.TRIANGLES, buffers);
+        twgl.drawBufferInfo(gl, buffers, gl.TRIANGLES);
     };
     Cube.prototype.center = function(drawingState) {
         return this.position;
@@ -113,7 +113,7 @@ var SpinningCube = undefined;
         twgl.setUniforms(shaderProgram,{
             view:drawingState.view, proj:drawingState.proj, lightdir:drawingState.sunDirection,
             cubecolor:this.color, model: modelM });
-        twgl.drawBufferInfo(gl, gl.TRIANGLES, buffers);
+        twgl.drawBufferInfo(gl, buffers, gl.TRIANGLES);
     };
     SpinningCube.prototype.center = function(drawingState) {
         return this.position;
