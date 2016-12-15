@@ -10,6 +10,7 @@ var Barn;
     var baseBuffers;
     var roofBuffers;
     var woodTexture;
+    var uwTexture;
 
     // constructor for Cubes
     Barn = function Barn(name, position, size, color) {
@@ -29,7 +30,7 @@ var Barn;
         baseBuffers = twgl.primitives.createCubeBufferInfo(gl,this.size);
         console.log(baseBuffers);
         woodTexture = twgl.createTexture(gl, { src: "Barn/textures/wood.jpg"})
-        
+        uwTexture = twgl.createTexture(gl, { src: "Barn/textures/uw.png"})
     };
     Barn.prototype.draw = function(drawingState) {
         var gl = drawingState.gl;
@@ -40,7 +41,7 @@ var Barn;
         
         twgl.setUniforms(shaderProgram, {
             u_woodTexture: woodTexture,
-            
+            u_uwTexture: uwTexture,
             view:drawingState.view, 
             proj:drawingState.proj,
             model:modelM, 
